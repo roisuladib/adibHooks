@@ -1,6 +1,11 @@
-import { useEffect, useState } from 'react';
+import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 
-export const useCounter = (initial = 60) => {
+type ReturnType = {
+   counter: number;
+   setCounter: Dispatch<SetStateAction<number>>;
+};
+
+export const useCounter = (initial = 60): ReturnType => {
    const [counter, setCounter] = useState(initial);
 
    useEffect(() => {
